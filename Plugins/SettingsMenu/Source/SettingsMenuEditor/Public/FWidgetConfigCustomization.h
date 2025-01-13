@@ -6,7 +6,7 @@
 
 
 /**
- * 
+ * FWidgetConfig struct customization, to only show data relevant to widget type
  */
 class SETTINGSMENUEDITOR_API FWidgetConfigCustomization : public IPropertyTypeCustomization
 {

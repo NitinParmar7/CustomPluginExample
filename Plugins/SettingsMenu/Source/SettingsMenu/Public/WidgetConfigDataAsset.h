@@ -6,8 +6,9 @@
 
 #include "WidgetConfigDataAsset.generated.h"
 
-
-
+/**
+ * Enum to identify widget type
+ */
 UENUM(BlueprintType)
 enum class EWidgetType : uint8
 {
@@ -18,7 +19,8 @@ enum class EWidgetType : uint8
 
 
 /**
- * 
+ * a Widget configuration widget, which allows us to specify what kind of widget it is
+ * and it's data
  */
 USTRUCT(BlueprintType)
 struct SETTINGSMENU_API FWidgetConfig
@@ -42,15 +44,15 @@ struct SETTINGSMENU_API FWidgetConfig
 };
 
 /**
- * 
+ * a Primary Data Asset which holds the information regarding widgets
+ * Which can be used to async load and generate widgets at runtime
  */
 UCLASS(Blueprintable, BlueprintType)
 class SETTINGSMENU_API UWidgetConfigDataAsset : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
 
-	public:
-
+public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
 	TArray<FWidgetConfig> Widgets;
 };
